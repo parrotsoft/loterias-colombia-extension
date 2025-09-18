@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const container = document.getElementById('resultados');
     const btnRecargar = document.getElementById('recargar');
+    const inputSearch = document.getElementById('search');
     cargarResultados();
 
     if (btnRecargar) {
@@ -10,9 +11,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    inputSearch.addEventListener('input', filtrarResultados);
+
     function cargarResultados(forzarApi = false) {
-        container.innerHTML = '<p>Cargando resultados...</p>';
-        
+        container.innerHTML = '<p>Cargando resultados <span class="spinner"></span></p>';
+        inputSearch.style.display = 'none';
+
         const hoy = new Date();
         const yyyy = hoy.getFullYear();
         const mm = String(hoy.getMonth() + 1).padStart(2, '0');
@@ -56,5 +60,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         html += '</ul>';
         container.innerHTML = html;
+        inputSearch.style.display = 'block';
+    }
+
+    function filtrarResultados() {
+        const filtro = inputSearch.value.toLowerCase();
+        const lista = container.querySelectorAll('li');
+        lista.forEach(li => {
+            const texto = li.textContent.toLowerCase();
+            li.style.display = texto.includes(filtro) ? '' : 'none';
+        });
     }
 });
