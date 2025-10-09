@@ -52,10 +52,12 @@
             color: #007bff;
             border-radius: 6px;
             padding: 7px 12px;
-            margin-bottom: 14px;
+            margin: 8px auto 14px auto;
             font-size: 14px;
             text-align: center;
             box-shadow: 0 1px 4px rgba(0, 123, 255, 0.06);
+            max-width: 260px;
+            width: calc(100% - 40px);
         }
 
         #resultados {
@@ -121,16 +123,16 @@
     </style>
 </head>
 
-<body style="margin: 2em;">
+<body>
     <h3>Resultados de Loterías de Hoy</h3>
     <p class="info-dia">Siempre se muestran los resultados del día actual. Si hay cambios, puedes actualizar con el
         botón.</p>
     <button id="recargar">Recargar</button>
     <input type="text" id="search" placeholder="Buscar lotería..."
-        style="width: 100%; padding: 8px; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;display: none;">
+        style="width: 96%; padding: 8px; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;display: none;">
 
     <input type="date" name="date" id="date"
-        style="width: 100%; padding: 8px; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
+        style="width: 96%; padding: 8px; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
 
     <div id="resultados"></div>
     <script src="popup.js"></script>
