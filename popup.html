@@ -100,6 +100,7 @@
             font-weight: bold;
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
         }
+
         .spinner {
             display: inline-block;
             width: 16px;
@@ -111,6 +112,7 @@
             vertical-align: middle;
             animation: spin 1s linear infinite;
         }
+
         @keyframes spin {
             to {
                 transform: rotate(360deg);
@@ -119,12 +121,17 @@
     </style>
 </head>
 
-<body>
+<body style="margin: 2em;">
     <h3>Resultados de Loterías de Hoy</h3>
     <p class="info-dia">Siempre se muestran los resultados del día actual. Si hay cambios, puedes actualizar con el
         botón.</p>
     <button id="recargar">Recargar</button>
-    <input type="text" id="search" placeholder="Buscar lotería..." style="width: 100%; padding: 8px; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;display: none;">
+    <input type="text" id="search" placeholder="Buscar lotería..."
+        style="width: 100%; padding: 8px; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;display: none;">
+
+    <input type="date" name="date" id="date"
+        style="width: 100%; padding: 8px; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
+
     <div id="resultados"></div>
     <script src="popup.js"></script>
 </body>
